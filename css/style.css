@@ -1,0 +1,1128 @@
+/*
+	HTML5 Reset :: style.css
+	----------------------------------------------------------
+	We have learned much from/been inspired by/taken code where offered from:
+
+	Eric Meyer					:: https://meyerweb.com
+	HTML5 Doctor				:: https://html5doctor.com
+	and the HTML5 Boilerplate	:: https://html5boilerplate.com
+
+-------------------------------------------------------------------------------*/
+
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+
+html,
+body,
+body div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+menu,
+nav,
+section,
+time,
+mark,
+audio,
+video,
+details,
+summary {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: normal;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+article,
+aside,
+figure,
+footer,
+header,
+nav,
+section,
+details,
+summary {
+    display: block;
+}
+
+/* Handle box-sizing while better addressing child elements:
+   https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+
+/* Responsive images and other embedded objects
+*/
+img,
+object,
+embed {
+    max-width: 100%;
+}
+
+/*
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+	 In fact, it *will* cause problems with Google Maps' controls at small size.
+	If this is the case for you, try uncommenting the following:
+
+#map img {
+		max-width: none;
+}
+*/
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {
+    overflow-y: scroll;
+}
+
+/* we use a lot of ULs that aren't bulleted.
+	don't forget to restore the bullets within content. */
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+    border-bottom: 1px dotted #000;
+    cursor: help;
+}
+
+/* tables still need cellspacing="0" in the markup */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th {
+    font-weight: bold;
+    vertical-align: bottom;
+}
+
+td {
+    font-weight: normal;
+    vertical-align: top;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+input,
+select {
+    vertical-align: middle;
+}
+
+pre {
+    white-space: pre;
+    /* CSS2 */
+    white-space: pre-wrap;
+    /* CSS 2.1 */
+    white-space: pre-line;
+    /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word;
+    /* IE */
+}
+
+input[type="radio"] {
+    vertical-align: text-bottom;
+}
+
+input[type="checkbox"] {
+    vertical-align: bottom;
+}
+
+.ie7 input[type="checkbox"] {
+    vertical-align: baseline;
+}
+
+.ie6 input {
+    vertical-align: text-bottom;
+}
+
+select,
+input,
+textarea {
+    font: 99% sans-serif;
+}
+
+table {
+    font-size: inherit;
+    font: 100%;
+}
+
+small {
+    font-size: 85%;
+}
+
+strong {
+    font-weight: bold;
+}
+
+td,
+td img {
+    vertical-align: top;
+}
+
+/* Make sure sup and sub don't mess with your line-heights https://gist.github.com/413930 */
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* standardize any monospaced elements */
+pre,
+code,
+kbd,
+samp {
+    font-family: monospace, sans-serif;
+}
+
+/* hand cursor on clickable elements */
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {
+    cursor: pointer;
+}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button,
+input,
+select,
+textarea {
+    margin: 0;
+}
+
+/* make buttons play nice in IE */
+button,
+input[type=button] {
+    width: auto;
+    overflow: visible;
+}
+
+/* scale images in IE7 more attractively */
+.ie7 img {
+    -ms-interpolation-mode: bicubic;
+}
+
+/* prevent BG image flicker upon hover
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+
+/* let's clear some floats */
+.clearfix:before,
+.clearfix:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+/* lato-regular - latin */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/lato-v17-latin-regular.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/lato-v17-latin-regular.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* lato-700 - latin */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+        url('../fonts/lato-v17-latin-700.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/lato-v17-latin-700.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* lato-900 - latin */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    src: local(''),
+        url('../fonts/lato-v17-latin-900.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/lato-v17-latin-900.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+body {
+    font-family: 'Lato';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: normal;
+    color: #102746;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.wrapper {
+    max-width: 72%;
+    margin: 0 auto;
+}
+
+/* header style start */
+.header {
+    position: fixed;
+    width: 100%;
+    transition: .2s;
+    padding: 1%;
+    z-index: 999;
+}
+
+.header__active {
+    background: #0E1D28;
+
+}
+
+.header__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 2.5%;
+}
+
+.header__list {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.header__item {
+    margin-right: 60px;
+}
+
+.header__item:last-child {
+    margin: 0;
+}
+
+.header__link {
+    font-size: 16px;
+    line-height: 22px;
+    color: white;
+    text-decoration: none;
+}
+
+.header__link:hover,
+.header__link:focus,
+.header__link:active {
+    opacity: 0.75;
+}
+
+.header__burger{
+    position: relative;
+    display: none;
+    width:30px;
+    height: 20px;
+}
+.header__burger-lines{
+    position: absolute;
+    background-color:white;
+    width:100%;
+    height: 2px;
+    left:0;
+}
+.first-line{
+    top: 0;
+}
+.second-line{
+    top:50%;
+}
+.third-line{
+    bottom:0;
+}
+
+/* header style end */
+
+/*intro style start*/
+.intro {
+    min-height: 100vh;
+    background: url(../img/intro-bg.jpg) no-repeat center;
+    background-size: cover;
+    padding-top: 12%;
+
+}
+
+.intro__title {
+    font-size: 40px;
+    line-height: 45px;
+    color: #FFFFFF;
+    max-width: 55%;
+    margin-bottom: 3%;
+}
+
+.intro__subtitle {
+    font-size: 15px;
+    line-height: 22px;
+    color: white;
+    max-width: 50%;
+    margin-bottom: 5%;
+}
+
+.search-form__info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search-form__field {
+    width: 25%;
+    background: transparent url(../img/swg/circle-icon.svg) no-repeat left 35%;
+    background-size: 6%;
+    border: 0;
+    margin-right: 8%;
+    border-bottom: 2px solid #BFC0C5;
+    padding-left: 3%;
+    padding-bottom: 1%;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.search-form__field::placeholder {
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.search-form__submit {
+    padding: 1.5% 4%;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+    line-height: 25px;
+    background-color: #1B7DFF;
+    border: 0;
+}
+
+.search-form__submit:hover,
+.search-form__submit:active,
+.search-form__submit:focus {
+    background-color: #116de6;
+}
+
+/*intro style end*/
+
+/* benefits style start */
+.benefits__wrap {
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
+    position: relative;
+}
+
+.benefits {
+    margin-bottom: 10%;
+}
+
+.benefits__title {
+    width: 100%;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    padding: 3% 4%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    background-color: white;
+}
+
+.benefits__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 6%;
+    padding: 0 4%;
+}
+
+.benefits__card {
+    grid-column: span 1;
+    margin-bottom: 20%;
+}
+
+.benefits__card-pic {
+    margin-bottom: 7%;
+    max-width: 66px;
+}
+
+.benefits__card-title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 5%;
+}
+
+.benefits__card-disc {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 7%;
+}
+
+.benefits__card-more {
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    color: rgb(0, 109, 254);
+    padding-right: 50px;
+    background: url(../img/swg/arrow-icon-right.svg) no-repeat 95% center;
+    transition: .2s  all;
+}
+
+.benefits__card-more:hover,
+.benefits__card-more:focus {
+    background: url(../img/swg/arrow-icon-right.svg) no-repeat right center;
+}
+
+
+/* benefits style end */
+
+/* places style start */
+.wrapper-full {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.section__title {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    position: relative;
+    padding-bottom: 1%;
+}
+
+.section__title::after {
+    display: block;
+    content: '';
+    width: 25%;
+    height: 3px;
+    background-color: #006DFE;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.places__caption {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4%;
+}
+
+.places__title {}
+
+.places__view-all {
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    color: rgb(0, 109, 254);
+    padding-right: 50px;
+    background: url(../img/swg/arrow-icon-right.svg) no-repeat 95% center;
+    transition: .2s all;
+}
+
+.places__view-all:hover,
+.places__view-all:focus {
+    background: url(../img/swg/arrow-icon-right.svg) no-repeat right center;
+}
+
+.places__cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 9%;
+}
+
+.places__card {
+    position: relative;
+    overflow: hidden;
+}
+
+.places__card::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(21, 24, 36, 0.4);
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.places__card:hover .places__card-pic {
+    transform: scale(1.05)
+}
+
+.places__card:hover.places__card::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(21, 24, 36, 0.4);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.places__card_size_lg {
+    grid-column: span 3;
+}
+
+.places__card_size_sm {
+    grid-column: span 2;
+}
+
+.places__card-pic {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .15s;
+}
+
+.places__card-title {
+    position: absolute;
+    z-index: 3;
+    bottom: 5%;
+    left: 5%;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 50px;
+    transition: 0.2s;
+}
+
+.places__card-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
+
+/* places style end */
+
+/* tours style start */
+.tours {
+    margin-bottom: 9%;
+}
+
+.tours__tour {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0 6%;
+    align-items: center;
+    margin-bottom: 4%;
+}
+
+.tour__info {
+    padding-left: 5%
+}
+
+.tour__title {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 16%;
+    transition: 0.2s;
+}
+
+.tour__disc {
+    margin-bottom: 8%;
+}
+
+.tour__more {
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    color: rgb(0, 109, 254);
+    padding-right: 50px;
+    background: url(../img/swg/arrow-icon-right.svg) no-repeat 95% center;
+    transition: .2s all;
+    margin-bottom: 4%;
+}
+
+.tour__more:hover,
+.tours__more:focus {
+    background: url(../img/swg/arrow-icon-right.svg) no-repeat right center;
+}
+
+/* tours style end */
+
+/* tours style end */
+.top {
+    margin-bottom: 11%;
+}
+
+.top__title {
+    margin-bottom: 4%;
+}
+
+.top__cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 5%;
+    grid-row-gap: 3%;
+}
+.top__card{
+    grid-column:span 2;
+}
+
+.top__card-pic {
+    position: relative;
+    margin-bottom: 8%;
+}
+
+.top__card-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    bottom: 1%;
+    left: 0;
+    width: 100%;
+    background: rgba(21, 24, 36, 0.6);
+    padding: 4% 7%;
+}
+
+.top__card-title {
+    color: #fff;
+    margin-right: auto;
+}
+
+.top__card-likes {
+    color: white;
+    padding-right: 16px;
+    background: url(../img/swg/heart-icon.svg) no-repeat right 70%;
+    background-size: 15px;
+    margin-right: 3%;
+}
+
+.top__card-comments {
+    color: white;
+    padding-right: 20px;
+    background: url(../img/swg/message-icon.svg) no-repeat right 70%;
+    background-size: 15px;
+}
+
+.top__card-disc {
+    margin-bottom: 6%;
+}
+
+.top__card-submit {
+    padding: 1.5% 4%;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    line-height: 25px;
+    background-color: #1B7DFF;
+    border: 0;
+}
+
+.top__card-submit:hover,
+.top__card-submit:active,
+.top__card-submit:focus {
+    background-color: #116de6;
+}
+
+/* tours style end */
+
+/* videos style start */
+.video__wrapper {
+    max-width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.videos {
+
+}
+
+.video__item {
+    padding-top: 56.25%;
+}
+
+.video__element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* videos style end */
+
+/* footer style start */
+.footer {
+    padding: 5% 0;
+    background: #0E1D28;
+}
+
+.footer__item {
+    display: flex;
+    /* justify-content: space-between; */
+
+}
+.footer__logo{
+    margin-right: 2%;
+}
+
+.footer__nav {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    margin-left: auto;
+}
+
+.footer__nav-title {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 2%;
+}
+
+.footer__nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+.footer__nav-link:hover,.footer__nav-link:active,.footer__nav-link:focus{
+opacity: .75;
+}
+
+/* footer style end */
+
+/* media style start */
+@media screen and (max-width:1200px) {
+    .search-form__field{
+    width:35%;
+    margin-bottom: 3%;
+    background-size: 4%;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .search-form__field{
+        width:45%;
+        margin-right: 3%;
+        }
+       .places__card-title{
+        font-size: 25px;
+        line-height: 40px;  
+        transition:0.2s;
+       }
+       .tour__title {
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 32px;
+        margin-bottom: 5%;
+        transition: 0.2s;
+    }
+    
+    .tour__disc {
+        margin-bottom: 5%;
+    }
+    .top__cards {
+        grid-row-gap: 2%;
+    }
+    .top__card{
+        grid-column:span 3;
+    }
+    .top__card-pic{
+        margin-bottom: 4%;
+    }
+    .top__card-disc{
+        margin-bottom: 3%;
+    }
+    
+    /* burger__menu start */
+    
+    .header__burger{
+        display: block;
+    }
+    .header__nav{
+        position: fixed;
+        width:100%;
+        height: 100%;
+        top: 0;
+        right: -100%;
+        /* right:0; */
+        background-color:black;
+        padding:5%;
+        z-index:10;
+        transition:0.2s all linear;
+    }
+    .header__nav__active{
+        right:0;
+    }
+    .header__list{
+        display: flex;
+        flex-direction: column;
+    }
+    .header__link{
+        font-size:25px;
+        line-height: 40px;
+    }
+    .header__nav-close{
+        position: absolute;
+        z-index: 11;
+        width:30px;
+        height: 20px;
+        top:35px;
+        right: 50px;
+    }
+    .header__nav-close-line{
+        position: absolute;
+        width:100%;
+        height: 2px;
+        background-color:white;
+        top:50%;
+    }
+    .header__nav-close-line:first-child{
+        transform:translateY(-50%) rotate(45deg);
+    }
+    .header__nav-close-line:last-child{
+        transform:translateY(-50%) rotate(-45deg);
+    }
+    /* burger__menu end */
+}
+@media screen and (max-width:670px){
+    .intro__title {
+        font-size: 30px;
+        line-height: 35px;
+    }
+    .places__title{
+        margin-bottom: 3%;
+    }
+    .places__card_size_lg, .places__card_size_sm{
+        grid-column:span 6;
+    }
+    .tours__tour{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "picture"
+        "description";
+    }
+    .tour__pic{
+        grid-area: picture;
+    }
+    .tour__info{
+        grid-area: description;
+    }
+    .tour__title {
+        margin-bottom: 2%;
+    }
+    
+    .tour__disc {
+        margin-bottom: 1%;
+    }
+}
+@media screen and (max-width:520px){
+    .intro__title {
+        max-width: 70%;
+    }
+    .intro__subtitle{
+        max-width:75%;
+    }
+    .search-form__field{
+        width:85%;
+        padding-left: 5%;
+        margin-bottom: 7%;
+    }
+    .search-form__submit {
+        font-size: 15px;
+        line-height: 20px;
+    }
+    .benefits__title{
+        font-size: 25px;
+        line-height: 32px;
+    }
+    .benefits__card {
+        grid-column: span 3;
+        margin-bottom: 7%;
+    }
+    .benefits__card-pic,.benefits__card-title,.benefits__card-disc {
+        margin-bottom: 1%;
+    }
+    .section__title{
+        font-size:25px;
+    }
+    .top__card{
+        grid-column:span 6;
+    }
+    .top__card-thumb{
+        width:100%;
+        object-fit: cover;
+    }
+    .top__card-pic{
+        margin-bottom: 0.5%;
+    }
+    .top__card-disc{
+        margin-bottom: 2%;
+    }
+    .top__card-submit {
+        padding: 0.5% 2%;
+        font-size: 14px;
+    }
+    .top__cards {
+        grid-row-gap: 1%;
+    }
+    .top__cards:last-child{
+        margin-bottom: 50%;
+    }
+   .footer__item{
+       flex-direction: column;
+   }
+   .footer__logo{
+       width:100%;
+   }
+   .footer__nav{
+       width:100%;
+       justify-content: space-between;
+   }
+}
+@media screen and (max-width:400px) {
+   
+    .search-form__field::placeholder {
+        font-size: 14px;
+        
+    }
+    .search-form__field{
+        background: transparent url(../img/swg/circle-icon.svg) no-repeat left 45%;
+        background-size: 4%;
+    }
+}
+/* media style end */
+
+
